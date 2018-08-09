@@ -1,6 +1,6 @@
 <?php
 
-// If you installed via composer, just use this code to requrie autoloader on the top of your projects.
+// If you installed via composer, just use this code to require autoloader on the top of your projects.
 require 'vendor/autoload.php';
 
 // Using Medoo namespace
@@ -9,7 +9,7 @@ use Medoo\Medoo;
 $database = new Medoo([
 // required
 'database_type' => 'mysql',
-'database_name' => 'users',
+'database_name' => 'Users',
 'server' => 'localhost',
 'username' => 'username',
 'password' => 'userpassword',

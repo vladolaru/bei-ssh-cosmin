@@ -1,10 +1,6 @@
-<?php
-?>
+<?php include 'header.php'; ?>
 
 <html>
-<head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-</head>
 <body>
 
 <section class="hero is-small is-danger is-bold">
@@ -39,4 +35,6 @@
 </section>
 </body>
 </html>
+
+<?php include 'footer.php'; ?>
 

@@ -1,10 +1,6 @@
 <?php include_once 'header.php'; ?>
 
 <html>
-<head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-	<script src="https://unpkg.com/ionicons@4.3.0/dist/ionicons.js"></script>
-</head>
 <body>
 
 
@@ -12,26 +8,23 @@
 	<div class="container">
 		<div class="notification">
 
-				<div class="container">
-					<div class="field">
-						<div class="level">
 
-							<div class="field">
-								<label class="label">First Name</label>
-								<div class="control ">
-									<input class="input is-primary" type="text"  value="">
-								</div>
-							</div>
+            <div class="columns">
+                <div class="column is-half">
+                    <label class="label">First Name<ion-icon name="contact"></ion-icon></label>
+                    <div class="control ">
+                        <input class="input is-primary" type="email" value="">
+                    </div>
+                </div>
 
-							<div class="field">
-								<label class="label">Last Name</label>
-								<div class="control">
-									<input class="input is-primary" type="text"  value="">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                <div class="column is-half">
+                    <label class="label">Last Name<ion-icon name="contact"></ion-icon></label>
+                    <div class="control ">
+                        <input class="input is-primary" type="email" value="">
+                    </div>
+                </div>
+            </div>
+
 
 				<label class="label">Your email address <ion-icon name="mail"></ion-icon> </label>
 				<div class="control ">
@@ -46,7 +39,7 @@
 							<div class="field is-grouped">
 								<div class="control">
 									<br>
-									<button class="button is-link">Register</button>
+									<button class="button is-danger">Register</button>
 								</div>
 							</div>
 						</div>

@@ -8,6 +8,9 @@
 	<div class="container">
 		<div class="notification">
 
+            <p class="has-text-black has-text-centered"><strong>You are just one step away...</strong></p>
+            <br>
+
 
             <div class="columns">
                 <div class="column is-half">
@@ -39,7 +42,7 @@
 							<div class="field is-grouped">
 								<div class="control">
 									<br>
-									<button class="button is-danger">Register</button>
+									<button class="button is-danger is-rounded">Register</button>
 								</div>
 							</div>
 						</div>
@@ -50,7 +53,7 @@
 							<p>or...</p>
 							<br>
 							<div class="container has-text-center">
-								<a class="button is-primary">Log into your account</a>
+                                <a class="button is-primary is-rounded" href="http://pixy.local/ssh/view/login.php">Log into your account</a>
 							</div>
 
 						</div>

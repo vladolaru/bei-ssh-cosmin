@@ -7,6 +7,9 @@
 	<div class="container">
 		<div class="notification">
 
+            <p class="has-text-black has-text-centered"><strong>Get that Santa going...</strong></p>
+            <br>
+
 			<div class="field">
 				<label class="label">Your email <ion-icon name="mail"></ion-icon> </label>
 				<div class="control ">
@@ -21,7 +24,7 @@
 <div class="field is-grouped">
 	<div class="control">
 		<br>
-		<button class="button is-link">Login</button>
+		<button class="button is-rounded">Login</button>
 	</div>
 </div>
 		</div>
@@ -32,8 +35,8 @@
 		<p>or...</p>
 			<br>
 		<div class="container has-text-center">
-			<a class="button is-primary">Register a new account</a>
-			<a class="button is-primary">Forgot your password?</a>
+            <a class="button is-primary is-rounded" href="http://pixy.local/ssh/view/register.php">Register a new account</a>
+            <a class="button is-primary is-rounded" href="http://pixy.local/ssh/view/reset.php">Forgot your password?</a>
 		</div>
 
 	</div>

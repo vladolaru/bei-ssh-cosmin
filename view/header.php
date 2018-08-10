@@ -17,7 +17,7 @@
                 SSH
             </h1>
             <h2 class="subtitle">
-                Santa's Secret Helper
+                Santa's Secret Helpser
             </h2>
         </div>
     </div>

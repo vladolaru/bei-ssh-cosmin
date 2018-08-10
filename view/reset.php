@@ -8,7 +8,7 @@
 		<div class="notification">
 
 			<p class="has-text-black has-text-centered"><strong>Reset your password</strong></p>
-			
+
 			<br>
 			<div class="field">
 				<label class="label">New Password</label>

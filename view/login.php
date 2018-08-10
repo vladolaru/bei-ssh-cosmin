@@ -1,96 +1,56 @@
-<?php include 'header.php'; ?>
+<?php include_once 'header.php'; ?>
 
 <html>
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+	<script src="https://unpkg.com/ionicons@4.3.0/dist/ionicons.js"></script>
 </head>
 <body>
+
+
+<section class="section">
+	<div class="container">
+		<div class="notification">
+
+			<div class="field">
+				<label class="label">Your email <ion-icon name="mail"></ion-icon> </label>
+				<div class="control ">
+					<input class="input is-primary" type="email" placeholder="Email address" value="">
+
 <div class="field">
-	<label class="label">Name</label>
+	<label class="label">Your password <ion-icon name="text"></ion-icon> </label>
 	<div class="control">
-		<input class="input" type="text" placeholder="Text input">
-	</div>
-</div>
-
-<div class="field">
-	<label class="label">Username</label>
-	<div class="control has-icons-left has-icons-right">
-		<input class="input is-success" type="text" placeholder="Text input" value="bulma">
-		<span class="icon is-small is-left">
-      <i class="fas fa-user"></i>
-    </span>
-		<span class="icon is-small is-right">
-      <i class="fas fa-check"></i>
-    </span>
-	</div>
-	<p class="help is-success">This username is available</p>
-</div>
-
-<div class="field">
-	<label class="label">Email</label>
-	<div class="control has-icons-left has-icons-right">
-		<input class="input is-danger" type="email" placeholder="Email input" value="hello@">
-		<span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
-    </span>
-		<span class="icon is-small is-right">
-      <i class="fas fa-exclamation-triangle"></i>
-    </span>
-	</div>
-	<p class="help is-danger">This email is invalid</p>
-</div>
-
-<div class="field">
-	<label class="label">Subject</label>
-	<div class="control">
-		<div class="select">
-			<select>
-				<option>Select dropdown</option>
-				<option>With options</option>
-			</select>
-		</div>
-	</div>
-</div>
-
-<div class="field">
-	<label class="label">Message</label>
-	<div class="control">
-		<textarea class="textarea" placeholder="Textarea"></textarea>
-	</div>
-</div>
-
-<div class="field">
-	<div class="control">
-		<label class="checkbox">
-			<input type="checkbox">
-			I agree to the <a href="#">terms and conditions</a>
-		</label>
-	</div>
-</div>
-
-<div class="field">
-	<div class="control">
-		<label class="radio">
-			<input type="radio" name="question">
-			Yes
-		</label>
-		<label class="radio">
-			<input type="radio" name="question">
-			No
-		</label>
-	</div>
-</div>
+		<input class="input is-primary" type="text" placeholder="Password" value="">
 
 <div class="field is-grouped">
 	<div class="control">
-		<button class="button is-link">Submit</button>
-	</div>
-	<div class="control">
-		<button class="button is-text">Cancel</button>
+		<br>
+		<button class="button is-link">Login</button>
 	</div>
 </div>
+		</div>
+	</div>
+
+	<div class="level">
+		<div class="container">
+		<p>or...</p>
+			<br>
+		<div class="container has-text-center">
+			<a class="button is-primary">Register a new account</a>
+			<a class="button is-primary">Forgot your password?</a>
+		</div>
+
+	</div>
+	</div>
+
+	</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
 </body>
 </html>
 
-
-<?php include 'footer.php'; ?>
+<?php include_once 'footer.php'; ?>

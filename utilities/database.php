@@ -9,10 +9,10 @@ use Medoo\Medoo;
 $database = new Medoo([
 // required
 'database_type' => 'mysql',
-'database_name' => 'Users',
+'database_name' => 'ssh_main',
 'server' => 'localhost',
-'username' => 'username',
-'password' => 'userpassword',
+'username' => 'root',
+'password' => 'root',
 
 // [optional]
 'charset' => 'utf8',

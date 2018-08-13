@@ -1,4 +1,6 @@
-<?php include_once 'header.php'; ?>
+<?php include_once 'header.php';
+include_once 'header.php';
+?>
 
 <html>
 <body>
@@ -10,24 +12,24 @@
 
             <!--Redirectul o sa il fac din algoritmul php catre pagina persons.php, userul fiind deja logat .  -->
 
-            <form action="roundhistory.php" method="post">
-
             <p class="has-text-black has-text-centered"><strong>You are just one step away...</strong></p>
             <br>
+
+            <form action="../model/signup.php" method="post">
 
 
             <div class="columns">
                 <div class="column is-half">
                     <label class="label">First Name<ion-icon name="contact"></ion-icon></label>
                     <div class="control ">
-                        <input class="input is-primary" type="email" value="">
+                        <input class="input is-primary" type="text" name="first_name">
                     </div>
                 </div>
 
                 <div class="column is-half">
                     <label class="label">Last Name<ion-icon name="contact"></ion-icon></label>
                     <div class="control ">
-                        <input class="input is-primary" type="email" value="">
+                        <input class="input is-primary" type="text" name="last_name">
                     </div>
                 </div>
             </div>
@@ -35,23 +37,23 @@
 
 				<label class="label">Your email address <ion-icon name="mail"></ion-icon> </label>
 				<div class="control ">
-					<input class="input is-primary" type="email" placeholder="Email address" value="">
+					<input class="input is-primary" type="email" placeholder="Email address" name="email">
 				</div>
-
+<br>
 					<div class="field">
 						<label class="label">Your password <ion-icon name="text"></ion-icon> </label>
 						<div class="control">
-							<input class="input is-primary" type="text" placeholder="Password" value="">
+							<input class="input is-primary" type="password" placeholder="Password" name="password">
 
 							<div class="field is-grouped">
 								<div class="control">
 									<br>
-                                    <button type="submit" class="button is-rounded is-danger">Register</button>
-                                </form>
+                                    <button type="submit" onclick="alert(<?php include ('../model/errors.php'); ?>)" name="register" class="button is-rounded is-danger">Register</button>
 								</div>
 							</div>
 						</div>
 					</div>
+            </form>
 
 					<div class="level">
 						<div class="container">

@@ -1,7 +1,10 @@
-<?php include 'header.php'; ?>
-
 <html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script src="https://unpkg.com/ionicons@4.3.0/dist/ionicons.js"></script>
+</head>
 <body>
+
 
 <section class="hero is-small is-danger is-bold">
 
@@ -15,6 +18,18 @@
 			</h2>
 		</div>
 	</div>
+
+    <div class="hero-head">
+        <nav class="navbar">
+                <div  class="navbar-menu">
+                    <div class="navbar-end">
+                        <a>
+                            Welcome back, Ofelia!
+                        </a>
+                    </div>
+                </div>
+        </nav>
+    </div>
 
 	<div class="navbar-end">
 
@@ -36,5 +51,4 @@
 </body>
 </html>
 
-<?php include 'footer.php'; ?>
 

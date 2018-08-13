@@ -11,6 +11,10 @@
 			<p class="has-text-black has-text-centered"><strong>Let's get this going..</strong></p>
 			<br>
 
+			<!--Redirectul o sa il fac din algoritmul php de SSH catre pagina roundhistory.php .  -->
+
+			<form action="roundhistory.php" method="post">
+
 			<div class="field">
 				<br>
 				<label class="label">Choose your participants<ion-icon name="text"></ion-icon> </label>
@@ -48,10 +52,11 @@
 				<div class="field is-grouped">
 					<div class="control">
 						<br>
-						<button class="button is-danger is-rounded">Send emails</button>
+						<button type="submit" class="button is-rounded is-danger">Send emails</button>
 					</div>
 				</div>
 			</div>
+			</form>
 
 			<div class="level">
 				<div class="container">

@@ -7,6 +7,10 @@
 	<div class="container">
 		<div class="notification">
 
+            <!--Redirectul o sa il fac din algoritmul php catre pagina persons.php .  -->
+
+            <form action="roundhistory.php" method="post">
+
             <p class="has-text-black has-text-centered"><strong>Get that Santa going...</strong></p>
             <br>
 
@@ -24,11 +28,12 @@
 <div class="field is-grouped">
 	<div class="control">
 		<br>
-		<button class="button is-rounded">Login</button>
-	</div>
+        <button type="submit" class="button is-rounded is-danger">Login</button>
+    </div>
 </div>
 		</div>
 	</div>
+            </form>
 
 	<div class="level">
 		<div class="container">

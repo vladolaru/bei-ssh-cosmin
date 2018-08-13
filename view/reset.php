@@ -7,6 +7,8 @@
 	<div class="container">
 		<div class="notification">
 
+			<form action="persons.php" method="post">
+
 			<p class="has-text-black has-text-centered"><strong>Reset your password</strong></p>
 
 			<br>
@@ -20,9 +22,10 @@
 						<input class="input is-primary" type="email" placeholder="Email address" value="">
 					<br>
 						<br>
-					<button class="button is-rounded is-danger">Set password</button>
+						<button type="submit" class="button is-rounded is-danger">Set password</button>
 
-				</div>
+					</form>
+					</div>
 			</div>
 
 			<div class="level">

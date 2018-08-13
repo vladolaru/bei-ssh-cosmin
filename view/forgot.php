@@ -6,6 +6,7 @@
 <section class="section">
 	<div class="container">
 		<div class="notification">
+            <form action="reset.php" method="post">
 
 			<p class="has-text-black has-text-centered"><strong>Password Reset Email</strong></p>
 			<br>
@@ -18,9 +19,10 @@
 					<input class="input is-primary" type="email" placeholder="Email address" value="">
 					<br>
 					<br>
-					<button class="button is-rounded is-danger">Send email</button>
+                    <button type="submit" class="button is-rounded is-danger">Send email</button>
+                </form>
 
-				</div>
+                </div>
 			</div>
 
 					<div class="level">

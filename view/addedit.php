@@ -10,7 +10,7 @@
 
 			<p class="has-text-black has-text-centered"><strong>What is this person all about?</strong></p>
 			<br>
-
+			<form action="persons.php" method="post">
 
 			<div class="columns">
 				<div class="column is-half">
@@ -54,8 +54,9 @@
 					<div class="field is-grouped">
 						<div class="control">
 							<br>
-							<button class="button is-danger is-rounded">Save person's details</button>
+							<button type="submit" class="button is-rounded is-danger">Save person's details</button>
 						</div>
+					</form>
 					</div>
 			</div>
 

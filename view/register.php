@@ -8,6 +8,10 @@
 	<div class="container">
 		<div class="notification">
 
+            <!--Redirectul o sa il fac din algoritmul php catre pagina persons.php, userul fiind deja logat .  -->
+
+            <form action="roundhistory.php" method="post">
+
             <p class="has-text-black has-text-centered"><strong>You are just one step away...</strong></p>
             <br>
 
@@ -42,7 +46,8 @@
 							<div class="field is-grouped">
 								<div class="control">
 									<br>
-									<button class="button is-danger is-rounded">Register</button>
+                                    <button type="submit" class="button is-rounded is-danger">Register</button>
+                                </form>
 								</div>
 							</div>
 						</div>

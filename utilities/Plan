@@ -1,0 +1,5 @@
+Dupa ce am facut forma oarecum bruta a View-urilor, urmeaza:
+1)Baza de date si sa incerc sa adaug si sa modific useri, hashuiesc parola.
+2)Fac in asa fel incat headerul sa observe daca userul e logat sau nu si sa apara "Welcome back, X!"
+3)Continui pe ideea de controller si vedem cum facem logica aplicatiei dupa ce m-am logat
+(continuare pe parcurs)

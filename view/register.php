@@ -48,7 +48,7 @@ include_once 'header.php';
 							<div class="field is-grouped">
 								<div class="control">
 									<br>
-                                    <button type="submit" onclick="alert(<?php include ('../model/errors.php'); ?>)" name="register" class="button is-rounded is-danger">Register</button>
+                                    <button type="submit" onclick="alert(<?php include_once ('../model/errors.php'); ?>)" name="register" class="button is-rounded is-danger">Register</button>
 								</div>
 							</div>
 						</div>

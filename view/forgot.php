@@ -12,8 +12,7 @@ include '../model/tokencreator.php';
 			<?php
 			if(!empty($errors)){
 				foreach ($errors as $error){
-					echo  "<p class=\"has-text-primary has-text-centered\"><strong>$error</strong></p>";
-
+					echo  "<p class=\"has-text-primary has-text-centered\"><strong>$error</strong></p><br>";
 				}
 			}
 			?>

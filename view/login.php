@@ -1,4 +1,6 @@
-<?php include_once 'header.php'; ?>
+<?php include_once 'header.php';
+include '../model/signin.php';
+?>
 
 <html>
 <body>
@@ -7,9 +9,17 @@
 	<div class="container">
 		<div class="notification">
 
+			<?php
+			if(!empty($errors)){
+				foreach ($errors as $error){
+					echo  "<p class=\"has-text-primary has-text-centered\"><strong>$error</strong></p><br>";
+				}
+			}
+			?>
+
             <!--Redirectul o sa il fac din algoritmul php catre pagina persons.php .  -->
 
-            <form action="../model/signin.php" method="post">
+            <form action="" method="post">
 
             <p class="has-text-black has-text-centered"><strong>Get that Santa going...</strong></p>
             <br>

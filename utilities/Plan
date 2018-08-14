@@ -1,4 +1,6 @@
 Dupa ce am facut forma oarecum bruta a View-urilor, urmeaza:
+1)Sa modific css ca in footer sa fie mai mare width
+2)sa postez in url emailul ca sa il pot lua in reset password
 
 1)Baza de date si sa incerc sa adaug si sa modific useri; RAMANE SA VAD CUM FAC SA APARA EROARE PE ACEIASI PAGINA
 

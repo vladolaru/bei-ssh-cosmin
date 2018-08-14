@@ -1,4 +1,5 @@
-<?php include_once 'header.php'; ?>
+<?php include_once 'header.php';
+include '../model/changepassword.php';?>
 
 <html>
 <body>
@@ -7,7 +8,17 @@
 	<div class="container">
 		<div class="notification">
 
-			<form action="../model/changepassword.php" method="post">
+			<?php
+			if(!empty($errors)){
+				foreach ($errors as $error){
+					echo  "<p class=\"has-text-primary has-text-centered\"><strong>$error</strong></p><br>";
+				}
+			}
+			?>
+
+			<form action="" method="post">
+
+                <input type="hidden"  name="email_param" value=<?php "$email_param"?> >
 
 			<p class="has-text-black has-text-centered"><strong>Reset your password</strong></p>
 
@@ -15,11 +26,11 @@
 			<div class="field">
 				<label class="label">New Password</label>
 				<div class="control ">
-					<input class="input is-primary" type="email" placeholder="The new password" name="password1">
+					<input class="input is-primary" type="password" placeholder="The new password" name="password1">
 					<br>
 					<label class="label">New Password Confirmation</label>
 					<div class="control ">
-						<input class="input is-primary" type="email" placeholder="The confirmation of the password you want" name="password2">
+						<input class="input is-primary" type="password" placeholder="The confirmation of the password you want" name="password2">
 					<br>
                         <br>
 						<button type="submit" class="button is-rounded is-danger" name="set">Set password</button>

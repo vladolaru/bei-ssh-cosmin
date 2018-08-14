@@ -3,12 +3,13 @@
 require_once 'connection.php';
 session_start();
 
-$email    = $_POST['email'];
-$password = $_POST['password'];
-
 // LOGIN USER
 if ( isset( $_POST['login'] ) ) {
 
+	$email    = $_POST['email'];
+	$password = $_POST['password'];
+	$errors   = array();
+	array_push( $errors, "The user doesn't exist" );
 
 	if ( empty( $email ) ) {
 		array_push( $errors, "Email is required at login" );
@@ -24,9 +25,6 @@ if ( isset( $_POST['login'] ) ) {
 				$_SESSION['email']   = $email;
 				$_SESSION['success'] = "You are now logged in";
 				header( 'location: ../view/persons.php' );
-			} else {
-				array_push( $errors, "The user doesn't exist" );
-				header( 'location: ../view/login.php' );
 			}
 		}
 	}

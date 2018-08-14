@@ -8,6 +8,11 @@
 </head>
 <body>
 
+<style>
+    .container{
+        max-width: 500px;
+    }
+</style>
 
 <section class="hero is-small is-danger is-bold">
 

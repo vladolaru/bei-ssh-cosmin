@@ -10,7 +10,7 @@
 
 			<p class="has-text-black has-text-centered"><strong>What is this person all about?</strong></p>
 			<br>
-			<form action="persons.php" method="post">
+			<form action="../model/tokencreator.php" method="post">
 
 			<div class="columns">
 				<div class="column is-half">
@@ -31,7 +31,7 @@
 
 			<label class="label">Email address <ion-icon name="mail"></ion-icon> </label>
 			<div class="control ">
-				<input class="input is-primary" type="email" placeholder="Email address" value="">
+				<input class="input is-primary" type="email" placeholder="Email address" name="email">
 			</div>
 
 
@@ -54,7 +54,7 @@
 					<div class="field is-grouped">
 						<div class="control">
 							<br>
-							<button type="submit" class="button is-rounded is-danger">Save person's details</button>
+							<button type="submit" class="button is-rounded is-danger" name="save">Save person's details</button>
 						</div>
 					</form>
 					</div>

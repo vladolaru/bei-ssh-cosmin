@@ -9,7 +9,7 @@
 
             <!--Redirectul o sa il fac din algoritmul php catre pagina persons.php .  -->
 
-            <form action="roundhistory.php" method="post">
+            <form action="../model/signin.php" method="post">
 
             <p class="has-text-black has-text-centered"><strong>Get that Santa going...</strong></p>
             <br>
@@ -17,18 +17,18 @@
 			<div class="field">
 				<label class="label">Your email <ion-icon name="mail"></ion-icon> </label>
 				<div class="control ">
-					<input class="input is-primary" type="email" placeholder="Email address" value="">
+					<input class="input is-primary" type="email" placeholder="Email address" name="email" maxlength="30" oninvalid="alert('You must fill out the email!');" required>
 
 <div class="field">
 	<br>
 	<label class="label">Your password <ion-icon name="text"></ion-icon> </label>
 	<div class="control">
-		<input class="input is-primary" type="text" placeholder="Password" value="">
+		<input class="input is-primary" type="password" placeholder="Password" name="password" maxlength="25" oninvalid="alert('You must fill out the password!');" required>
 
 <div class="field is-grouped">
 	<div class="control">
 		<br>
-        <button type="submit" class="button is-rounded is-danger">Login</button>
+        <button type="submit" name="login" class="button is-rounded is-danger">Login</button>
     </div>
 </div>
 		</div>

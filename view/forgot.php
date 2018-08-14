@@ -1,4 +1,6 @@
-<?php include_once 'header.php'; ?>
+<?php include_once 'header.php';
+include '../model/tokencreator.php';
+?>
 
 <html>
 <body>
@@ -6,7 +8,17 @@
 <section class="section">
 	<div class="container">
 		<div class="notification">
-            <form action="reset.php" method="post">
+
+			<?php
+			if(!empty($errors)){
+				foreach ($errors as $error){
+					echo  "<p class=\"has-text-primary has-text-centered\"><strong>$error</strong></p>";
+
+				}
+			}
+			?>
+
+            <form action=" " method="post">
 
 			<p class="has-text-black has-text-centered"><strong>Password Reset Email</strong></p>
 			<br>
@@ -16,10 +28,10 @@
 			<div class="field">
 				<label class="label">Your email <ion-icon name="mail"></ion-icon> </label>
 				<div class="control ">
-					<input class="input is-primary" type="email" placeholder="Email address" value="">
+					<input class="input is-primary" type="email" placeholder="Email address" name="email">
 					<br>
 					<br>
-                    <button type="submit" class="button is-rounded is-danger">Send email</button>
+                    <button type="submit" class="button is-rounded is-danger" name="send">Send email</button>
                 </form>
 
                 </div>
@@ -30,7 +42,7 @@
 							<p>or...</p>
 							<br>
 							<div class="container has-text-center">
-								<a class="button is-primary is-rounded" href="http://pixy.local/ssh/view/login.php">Log into your account</a>
+								<a class="button is-primary is-rounded" href="login.php">Log into your account</a>
 							</div>
 
 						</div>

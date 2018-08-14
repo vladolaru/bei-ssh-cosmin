@@ -1,9 +1,19 @@
 Dupa ce am facut forma oarecum bruta a View-urilor, urmeaza:
 
-1)Baza de date si sa incerc sa adaug si sa modific useri, hashuiesc parola atat pt user cat si in baza de date.
+1)Baza de date si sa incerc sa adaug si sa modific useri; RAMANE SA VAD CUM FAC SA APARA EROARE PE ACEIASI PAGINA
 
-2)Fac in asa fel incat headerul sa observe daca userul e logat sau nu si sa apara "Welcome back, X!"
+2)Hashuiesc parola.Verific mailul sa fie valid la register; 'check'
 
-3)Continui pe ideea de controller si vedem cum facem logica aplicatiei dupa ce m-am logat(implicand cookies)
+3)Rezolv pt toate formurile faza cu baza de date si toate cele, sa fie totul perf, si cam am ajuns intr-un punct bun.
+
+4)Fac in asa fel incat headerul sa observe daca userul e logat sau nu si sa apara "Welcome back, X!"
+
+5)Continui pe ideea de controller si vedem cum facem logica aplicatiei dupa ce m-am logat(implicand cookies)
+
+6)Sa pot sa modific info persoanelor.
+
+7)Sa iau tokenu si sa il adaug ca parametru, trimitandu-l pe pagina de reset cu tokenul in url.
+
+8)Implic algoritmul in program.
 
 (continuare pe parcurs)

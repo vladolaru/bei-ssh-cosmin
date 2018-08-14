@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="notification">
 
-			<form action="persons.php" method="post">
+			<form action="../model/changepassword.php" method="post">
 
 			<p class="has-text-black has-text-centered"><strong>Reset your password</strong></p>
 
@@ -15,14 +15,14 @@
 			<div class="field">
 				<label class="label">New Password</label>
 				<div class="control ">
-					<input class="input is-primary" type="email" placeholder="Email address" value="">
+					<input class="input is-primary" type="email" placeholder="The new password" name="password1">
 					<br>
 					<label class="label">New Password Confirmation</label>
 					<div class="control ">
-						<input class="input is-primary" type="email" placeholder="Email address" value="">
+						<input class="input is-primary" type="email" placeholder="The confirmation of the password you want" name="password2">
 					<br>
-						<br>
-						<button type="submit" class="button is-rounded is-danger">Set password</button>
+                        <br>
+						<button type="submit" class="button is-rounded is-danger" name="set">Set password</button>
 
 					</form>
 					</div>

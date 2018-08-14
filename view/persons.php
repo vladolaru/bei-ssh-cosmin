@@ -66,12 +66,6 @@
 				</div>
 			</div>
 
-			<div class="level">
-				<div class="container">
-					<div class="container has-text-center">
-						<a class="button is-rounded is-black" href="http://pixy.local/ssh/view/roundhistory.php">Back to mainpage</a>
-					</div>
-
 				</div>
 			</div>
 

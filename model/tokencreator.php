@@ -9,14 +9,12 @@ $datas='';
 $santa_reset_email='santa@santa.com';
 $random_token=randomize();
 
-$email_param=array();
-
 // Create a token and send it to the user via email
 if ( isset( $_POST['send'] ) ) {
 
 	$email = $_POST['email'];
-	$msg   = 'Because you had some issues with your password, Santa will come and rescue the situation.' . "\r\n" . "\r\n" . ' Click on the following link to reset your password: ' . ' http://pixy.local/ssh/view/reset.php?=' . $random_token . ' .' . "\r\n" . "\r\n" . ' Have a jolly day!';
-
+	$msg   = 'Because you had some issues with your password, Santa will come and rescue the situation.' . "\r\n" . "\r\n" . ' Click on the following link to reset your password: ' . ' http://pixy.local/ssh/view/reset.php?=' . $random_token . '&email=' . $email . ' .' . "\r\n" . "\r\n" . ' Have a jolly day!';
+	$flag = 0;
 
 	if ( empty( $email ) ) {
 		array_push( $errors, "Email is required at re-setting the password" );
@@ -26,9 +24,15 @@ if ( isset( $_POST['send'] ) ) {
 		array_push( $errors, "Email is not properly written" );
 	}
 
-	array_push( $errors, "The user doesn't exist" );
+	$datas = $database->select("users_db", [ "email" ]);
+	foreach($datas as $data){
+		if ($email==$data['email']) {
+			$flag=1;
+			break;
+		}
+	}
 
-	if ( count( $errors ) == 1 ) {
+	if ( count( $errors ) == 0 && 1==$flag ) {
 		$datas = $database->select( "users_db", [ "email" ] );
 		foreach ( $datas as $data ) {
 			if ( $email == $data['email'] ) {
@@ -38,5 +42,6 @@ if ( isset( $_POST['send'] ) ) {
 			}
 		}
 	}
+	else{array_push($errors, "The user doesn't exist");}
 }
 

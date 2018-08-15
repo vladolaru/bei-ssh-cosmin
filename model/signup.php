@@ -27,12 +27,12 @@ if (isset($_POST['register'])) {
 
 		// first check the database to make sure
 		// a user does not already exist with the same username and/or email
-	$datas = $database->select("users_db", [ "email" ]);
-	foreach($datas as $data){
-		if ($email==$data['email']) {
+		$datas = $database->select("users_db", [ "email" ]);
+		foreach($datas as $data){
+			if ($email==$data['email']) {
 			array_push($errors, "The user already exists");
+			}
 		}
-	}
 
 
 	// Finally, register user if there are no errors in the form

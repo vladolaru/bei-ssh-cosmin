@@ -18,8 +18,6 @@ include '../model/changepassword.php';?>
 
 			<form action="" method="post">
 
-                <input type="hidden"  name="email_param" value=<?php "$email_param"?> >
-
 			<p class="has-text-black has-text-centered"><strong>Reset your password</strong></p>
 
 			<br>

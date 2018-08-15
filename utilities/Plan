@@ -1,20 +1,24 @@
 Dupa ce am facut forma oarecum bruta a View-urilor, urmeaza:
-1)Sa modific css ca in footer sa fie mai mare width
-2)sa postez in url emailul ca sa il pot lua in reset password
 
-1)Baza de date si sa incerc sa adaug si sa modific useri; RAMANE SA VAD CUM FAC SA APARA EROARE PE ACEIASI PAGINA
+2)sa postez in url emailul ca sa il pot lua in reset password (check)
 
-2)Hashuiesc parola.Verific mailul sa fie valid la register; 'check'
+7)Sa iau tokenu si sa il adaug ca parametru, trimitandu-l pe pagina de reset cu tokenul in url.(check)
 
-3)Rezolv pt toate formurile faza cu baza de date si toate cele, sa fie totul perf, si cam am ajuns intr-un punct bun.
+1)Baza de date si sa incerc sa adaug si sa modific useri; RAMANE SA VAD CUM FAC SA APARA EROARE PE ACEIASI PAGINA (solved)
+
+2)Hashuiesc parola.Verific mailul sa fie valid la register; (solved)
+
+
+
+
 
 4)Fac in asa fel incat headerul sa observe daca userul e logat sau nu si sa apara "Welcome back, X!"
 
 5)Continui pe ideea de controller si vedem cum facem logica aplicatiei dupa ce m-am logat(implicand cookies)
 
-6)Sa pot sa modific info persoanelor.
+3)Rezolv pt toate formurile faza cu baza de date si toate cele, sa fie totul perf;
 
-7)Sa iau tokenu si sa il adaug ca parametru, trimitandu-l pe pagina de reset cu tokenul in url.
+6)Sa pot sa modific info persoanelor.
 
 8)Implic algoritmul in program.
 

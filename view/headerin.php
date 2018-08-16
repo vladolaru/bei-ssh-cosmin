@@ -40,7 +40,7 @@
 
 	<div class="navbar">
 		<div class="navbar-item">
-		<a href="login.php" class="has-text-black button">
+		<a href="../view/login.php" class="has-text-black button">
 			Logout
 		</a>
 		</div>
@@ -48,7 +48,7 @@
 		<div class="navbar-item navbar-end">
 			<div class="field is-grouped">
 
-				<a href="persons.php" class="control button is-white">Persons</a>
+				<a href="../view/persons.php" class="control button is-white">Persons</a>
 
 				<a href="roundhistory.php" class="control button is-white">Rounds</a>
 

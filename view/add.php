@@ -1,5 +1,6 @@
 <?php include_once 'headerin.php';
-include '../model/adding.php';?>
+include '../model/adding.php';
+?>
 
 <html>
 <body>
@@ -15,6 +16,16 @@ include '../model/adding.php';?>
 					echo  "<p class=\"has-text-primary has-text-centered\"><strong>$error</strong></p><br>";
 				}
 			}
+
+			if(empty($desired_user)){
+				$desired_user = array(
+					'first_name' => '',
+					'last_name' => '',
+					'email' => '',
+					'preferences' => '',
+                    'private_notes' => '',
+				);
+            }
 			?>
 
 			<p class="has-text-black has-text-centered"><strong>What is this person all about?</strong></p>
@@ -25,22 +36,22 @@ include '../model/adding.php';?>
 				<div class="column is-half">
 					<label class="label">First Name<ion-icon name="contact"></ion-icon></label>
 					<div class="control ">
-						<input name="first_name" class="input is-primary" type="text" value="">
+						<input name="first_name" class="input is-primary" type="text" value="<?php echo $desired_user['first_name']; ?>">
 					</div>
 				</div>
 
 				<div class="column is-half">
 					<label class="label">Last Name<ion-icon name="contact"></ion-icon></label>
 					<div class="control ">
-						<input name="last_name" class="input is-primary" type="text" value="">
+						<input name="last_name" class="input is-primary" type="text" value="<?php echo $desired_user['last_name']; ?>">
 					</div>
 				</div>
 			</div>
 
 
-			<label class="label">Email address <ion-icon name="mail"></ion-icon> </label>
+			<label class="label">Email address <ion-icon name="mail"></ion-icon></label>
 			<div class="control ">
-				<input name="email" class="input is-primary" type="email" placeholder="Email address">
+				<input name="email" class="input is-primary" type="email" placeholder="Email address" value="<?php echo $desired_user['email']; ?>">
 			</div>
 
 
@@ -49,14 +60,14 @@ include '../model/adding.php';?>
 				<label class="label">Personal preferences<ion-icon name="text"></ion-icon> </label>
 				<div class="field">
 					<div class="control">
-						<textarea name="preferences" maxlength="150" class="textarea is-primary" type="text" placeholder="What does this person like mostly? What not?(optional)"></textarea>
+						<textarea name="preferences" maxlength="150" class="textarea is-primary" type="text" placeholder="What does this person like mostly? What not?(optional)"><?php echo $desired_user['preferences'];?></textarea>
 					</div>
 				</div>
 
 				<label class="label">Private notes about this person<ion-icon name="text"></ion-icon> </label>
 				<div class="field">
 					<div class="control">
-						<textarea name="private_notes" maxlength="150" class="textarea is-primary" type="text" placeholder="Something that maybe Santa would like to know...(optional)"></textarea>
+						<textarea name="private_notes"  maxlength="150" class="textarea is-primary" type="text" placeholder="Something that maybe Santa would like to know...(optional)" ><?php echo $desired_user['private_notes'];?></textarea>
 					</div>
 				</div>
 
@@ -74,7 +85,7 @@ include '../model/adding.php';?>
 					<p>or...</p>
 					<br>
 					<div class="container has-text-center">
-						<a class="button is-rounded is-black" href="http://pixy.local/ssh/view/login.php">Cancel</a>
+						<a class="button is-rounded is-black" href="http://pixy.local/ssh/view/persons.php">Cancel</a>
 					</div>
 
 				</div>

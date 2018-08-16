@@ -1,6 +1,7 @@
 <?php include_once 'headerin.php';
 include '../model/connection.php';
 include '../model/showpersons.php';
+include '../model/information_to_edit.php';
 ?>
 
 <html>
@@ -19,27 +20,25 @@ include '../model/showpersons.php';
 			<p class="has-text-black has-text-centered"><strong>Your Secret Santa players</strong></p>
 			<br>
 
-			<!--Paragraful de mai jos e constant adaugat cand apare un user nou, numarul se itereaza si scade automat.  -->
-
-			<?php $index=0;
+			<?php $index=1;
             foreach($database_persons as $person){
-				echo "
-                <div class=\"columns\">
-                <div class=\"column is-one-third\">
+				echo '
+                <div class="columns">
+                <div class="column is-one-third">
 				<p><strong>
-		        " . $index++ . "." . $person['first_name'] . " " . $person['last_name'] ."</strong></p>
+		        ' . $index++ . '.' . $person['first_name'] . ' ' . $person['last_name'] .'</strong></p>
 		        </div>
 				
-				<div class=\"column is-one-third\">
-				<p><strong>". $person['email']. "</strong></p>
+				<div class="column is-one-third">
+				<p><strong>'. $person['email']. '</strong></p>
 				</div>
 				
-				<div class=\"column is-pulled-right has-text-centered \">
+				<div class="column is-pulled-right has-text-centered ">
 				<p>
-					<a href=\"http://pixy.local/ssh/view/addedit.php\"><ion-icon name=\"information-circle\"></ion-icon></a>
-					<a href=\"http://pixy.local/ssh/model/delete.php?email=\"" .$person['email']. "><ion-icon name=\"trash\"></ion-icon></a>
+					<a href="http://pixy.local/ssh/model/information_to_edit.php?email=' . $person['email'] . '"><ion-icon name="information-circle"></ion-icon></a>
+					<a href="http://pixy.local/ssh/model/delete.php?email=' .$person['email']. '"><ion-icon name="trash"></ion-icon></a>
 				</p>
-				</div></div>";
+				</div></div>';
 			}
 			?>
 
@@ -47,7 +46,7 @@ include '../model/showpersons.php';
 				<div class="field is-grouped">
 					<div class="control">
 						<br>
-						<a href="http://pixy.local/ssh/view/addedit.php" class="button is-danger is-rounded">Add a new one</a>
+						<a href="http://pixy.local/ssh/view/add.php" class="button is-danger is-rounded">Add a new one</a>
 					</div>
 				</div>
 			</div>

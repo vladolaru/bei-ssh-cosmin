@@ -1,9 +1,8 @@
 <?php
-
 require_once 'connection.php';
 
 
-// ADD PERSON'S DETAILS
+// MODIFY PERSON'S DETAILS
 if (isset($_POST['save'])) {
 
 	// initializing variables
@@ -21,8 +20,13 @@ if (isset($_POST['save'])) {
 	if (empty($last_name)) { array_push($errors, "Last name is required"); }
 	if (empty($email)) { array_push($errors, "Email is required"); }
 
-	// first check the database to make sure
-	// a user does not already exist with the same username and/or email
+	$datas = $database->select("persons_db", [ "email", "first_name", "last_name" , "private_notes", "preferences"]);
+	foreach($datas as $data){
+	if ($email==$data['email'] && $first_name==$data['first_name'] && $last_name==$data['last_name'] && $private_notes==$data['private_notes'] && $preferences==$data['preferences'])
+	{ array_push($errors, "No information was changed"); }}
+
+	// Check if
+	// a user does not already exist with the same email
 	$datas = $database->select("persons_db", [ "email" ]);
 	foreach($datas as $data){
 		if ($email==$data['email']) {
@@ -31,15 +35,17 @@ if (isset($_POST['save'])) {
 	}
 
 
-	// Finally, register user or update if there are no errors in the form
+	// Finally, update if there are no errors in the form
 	if (count($errors) == 0) {
 
-		$database->insert('persons_db', [
+		$database->update('persons_db', [
 			'first_name' => $first_name,
 			'last_name' => $last_name,
 			'email' => $email,
 			'preferences' => $preferences,
 			'private_notes' => $private_notes,
+		],[
+			 'email[=]'=>$email
 		]);
 
 

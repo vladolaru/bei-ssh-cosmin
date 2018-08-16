@@ -1,9 +1,15 @@
 <?php include_once 'headerin.php';
 include '../model/connection.php';
-include '../model/showpersons.php';?>
+include '../model/showpersons.php';
+?>
 
 <html>
 <body>
+<style>
+    .container{
+        max-width: 600px;
+    }
+</style>
 
 
 <section class="section">
@@ -15,19 +21,26 @@ include '../model/showpersons.php';?>
 
 			<!--Paragraful de mai jos e constant adaugat cand apare un user nou, numarul se itereaza si scade automat.  -->
 
-			<?php foreach($database_persons as $person){
-			    $index=0; $index++;
+			<?php $index=0;
+            foreach($database_persons as $person){
 				echo "
-                <nav class=\"level\">
-				<p class=\"level-item has-text-centered\"><strong>
-		        ". "." . $person['first_name'] . " " . $person['last_name'] ."</strong></p>
-				<p class=\"level-item has-text-centered\">
-					<strong>". $person['email']. "</strong></p>
-				<p class=\"level-item has-text-centered\">
+                <div class=\"columns\">
+                <div class=\"column is-one-third\">
+				<p><strong>
+		        " . $index++ . "." . $person['first_name'] . " " . $person['last_name'] ."</strong></p>
+		        </div>
+				
+				<div class=\"column is-one-third\">
+				<p><strong>". $person['email']. "</strong></p>
+				</div>
+				
+				<div class=\"column is-pulled-right has-text-centered \">
+				<p>
 					<a href=\"http://pixy.local/ssh/view/addedit.php\"><ion-icon name=\"information-circle\"></ion-icon></a>
-					<a href=><ion-icon name=\"trash\"></ion-icon></a>
+					<a href=\"http://pixy.local/ssh/model/delete.php?email=\"" .$person['email']. "><ion-icon name=\"trash\"></ion-icon></a>
 				</p>
-			</nav>";}
+				</div></div>";
+			}
 			?>
 
 

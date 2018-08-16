@@ -1,4 +1,5 @@
-<?php include_once 'header.php'; ?>
+<?php include_once 'headerin.php';
+include '../model/adding.php';?>
 
 <html>
 <body>
@@ -8,22 +9,30 @@
 	<div class="container">
 		<div class="notification">
 
+			<?php
+			if(!empty($errors)){
+				foreach ($errors as $error){
+					echo  "<p class=\"has-text-primary has-text-centered\"><strong>$error</strong></p><br>";
+				}
+			}
+			?>
+
 			<p class="has-text-black has-text-centered"><strong>What is this person all about?</strong></p>
 			<br>
-			<form action="../model/tokencreator.php" method="post">
+			<form action="" method="post">
 
 			<div class="columns">
 				<div class="column is-half">
 					<label class="label">First Name<ion-icon name="contact"></ion-icon></label>
 					<div class="control ">
-						<input class="input is-primary" type="email" value="">
+						<input name="first_name" class="input is-primary" type="text" value="">
 					</div>
 				</div>
 
 				<div class="column is-half">
 					<label class="label">Last Name<ion-icon name="contact"></ion-icon></label>
 					<div class="control ">
-						<input class="input is-primary" type="email" value="">
+						<input name="last_name" class="input is-primary" type="text" value="">
 					</div>
 				</div>
 			</div>
@@ -31,7 +40,7 @@
 
 			<label class="label">Email address <ion-icon name="mail"></ion-icon> </label>
 			<div class="control ">
-				<input class="input is-primary" type="email" placeholder="Email address" name="email">
+				<input name="email" class="input is-primary" type="email" placeholder="Email address">
 			</div>
 
 
@@ -40,14 +49,14 @@
 				<label class="label">Personal preferences<ion-icon name="text"></ion-icon> </label>
 				<div class="field">
 					<div class="control">
-						<textarea class="textarea is-primary" type="text" placeholder="What does this person like mostly? What not?"></textarea>
+						<textarea name="preferences" maxlength="150" class="textarea is-primary" type="text" placeholder="What does this person like mostly? What not?(optional)"></textarea>
 					</div>
 				</div>
 
 				<label class="label">Private notes about this person<ion-icon name="text"></ion-icon> </label>
 				<div class="field">
 					<div class="control">
-						<textarea class="textarea is-primary" type="text" placeholder="Something that maybe Santa would like to know..."></textarea>
+						<textarea name="private_notes" maxlength="150" class="textarea is-primary" type="text" placeholder="Something that maybe Santa would like to know...(optional)"></textarea>
 					</div>
 				</div>
 

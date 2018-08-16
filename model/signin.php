@@ -9,7 +9,6 @@ if ( isset( $_POST['login'] ) ) {
 	$email    = $_POST['email'];
 	$password = $_POST['password'];
 	$errors   = array();
-	array_push( $errors, "The user doesn't exist" );
 
 	if ( empty( $email ) ) {
 		array_push( $errors, "Email is required at login" );
@@ -28,5 +27,6 @@ if ( isset( $_POST['login'] ) ) {
 			}
 		}
 	}
+	else {array_push( $errors, "The user doesn't exist" );}
 }
 

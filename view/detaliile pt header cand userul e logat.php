@@ -5,6 +5,11 @@
 </head>
 <body>
 
+<style>
+    .container{
+        max-width: 500px;
+    }
+</style>
 
 <section class="hero is-small is-danger is-bold">
 
@@ -24,7 +29,7 @@
                 <div  class="navbar-menu">
                     <div class="navbar-end">
                         <a>
-                            Welcome back, Ofelia!
+                            Welcome back, X!
                         </a>
                     </div>
                 </div>
@@ -36,9 +41,9 @@
 		<div class="navbar-item">
 			<div class="field is-grouped">
 
-				<a class="control button is-white">Persons</a>
+				<a href="persons.php" class="control button is-white">Persons</a>
 
-				<a class="control button is-white">Rounds</a>
+				<a href="rounds.php" class="control button is-white">Rounds</a>
 
 			</div>
 

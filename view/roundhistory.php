@@ -1,4 +1,8 @@
-<?php include_once 'headerin.php'; ?>
+<?php include_once 'headerin.php';
+include '../model/connection.php';
+include '../model/showhistory.php';
+
+?>
 
 <html>
 <body>
@@ -13,56 +17,24 @@
 
 			<!--Paragraful de mai jos e constant adaugat cand apare un user nou, numarul se itereaza si scade automat.  -->
 
-			<nav class="level">
-				<p class="level-item has-text-centered">
-					<strong>1.28th November 2015</strong>
-				</p>
-				<p class="level-item has-text-centered">
-					<strong>10 participants</strong>
-				</p>
-				<p class="level-item has-text-centered">
-					<strong>10$ budget</strong>
-				</p>
-			</nav>
-
-			<!--Paragraful de mai sus e constant adaugat cand apare un user nou, numarul se itereaza si scade automat.  -->
-
-
-			<nav class="level">
-				<p class="level-item has-text-centered">
-					<strong>2.13th October 2016</strong>
-				</p>
-				<p class="level-item has-text-centered">
-					<strong>9 participants</strong>
-				</p>
-				<p class="level-item has-text-centered">
-					<strong>10$ budget</strong>
-				</p>
-			</nav>
-
-			<nav class="level">
-				<p class="level-item has-text-centered">
-					<strong>3.15th November 2017</strong>
-				</p>
-				<p class="level-item has-text-centered">
-					<strong>15 participants</strong>
-				</p>
-				<p class="level-item has-text-centered">
-					<strong>20$ budget</strong>
-				</p>
-			</nav>
-
-			<nav class="level">
-				<p class="level-item has-text-centered">
-					<strong>4.10th November 2018</strong>
-				</p>
-				<p class="level-item has-text-centered">
-					<strong>23 participants</strong>
-				</p>
-				<p class="level-item has-text-centered">
-					<strong>15$ budget</strong>
-				</p>
-			</nav>
+			<?php $index=1;
+			foreach($database_rounds as $rounds){
+				echo '
+                <div class="columns">
+                <div class="column is-one-third">
+				<p><strong>' .$index++ . '.' . $round['date'] . '</strong></p>
+		        </div>
+				
+				<div class="column is-one-third">
+				<p><strong>'. $round['participant_number']. '</strong></p>
+				</div>
+				
+				<div class="is-pulled-right has-text-centered">
+				<p><strong>'. $round['budget']. '$' .'</strong></p>
+				</div>
+				</div>';
+			}
+			?>
 
 			<div class="field is-grouped">
 				<div class="control">

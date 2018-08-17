@@ -13,7 +13,7 @@ $random_token=randomize();
 if ( isset( $_POST['send'] ) ) {
 
 	$email = $_POST['email'];
-	$msg   = 'Because you had some issues with your password, Santa will come and rescue the situation.' . "\r\n" . "\r\n" . ' Click on the following link to reset your password: ' . ' http://pixy.local/ssh/view/reset.php?=' . $random_token . '&email=' . $email . ' .' . "\r\n" . "\r\n" . ' Have a jolly day!';
+	$msg   = 'Because you had some issues with your password, Santa will come and rescue the situation.' . "\r\n" . "\r\n" . ' Click on the following link to reset your password: ' . ' http://pixy.local/ssh/view/reset.php?token=' . $random_token . '&email=' . $email . ' .' . "\r\n" . "\r\n" . ' Have a jolly day!';
 	$flag = 0;
 
 	if ( empty( $email ) ) {
@@ -36,6 +36,12 @@ if ( isset( $_POST['send'] ) ) {
 		$datas = $database->select( "users_db", [ "email" ] );
 		foreach ( $datas as $data ) {
 			if ( $email == $data['email'] ) {
+
+				$database->update('users_db', [
+					'token'=> $random_token
+				],
+					[ "email"=>$data['email']]);
+
 				mail( $email, 'Santa gifted you something small, but important...', $msg, 'From: ' . $santa_reset_email );
 				header( 'location: ../view/afterforgot.php' );
 				exit();

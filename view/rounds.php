@@ -29,7 +29,7 @@ include '../model/showpersons.php';?>
 				<br>
 				<label class="label">Choose your participants<ion-icon name="text"></ion-icon> </label>
                 <div class="select is-multiple">
-                    <select multiple size="5">
+                    <select name="select[]" multiple size="5">
                         <?php foreach($database_persons as $person)
                             echo "<option value=".$person['email'] .">". $person['email'] . "</option>"
                             ?>

@@ -301,7 +301,7 @@ class SecretSantaCoreCosmin {
 	 *
 	 * @see doPairing() - to understand how the pairings are done and how/to who are the emails sent.
 	 */
-	public function goRudolph() {
+	public function goRudolph($message) {
 
 		if ( $this->attributesCheck() == true ) {
 
@@ -309,11 +309,12 @@ class SecretSantaCoreCosmin {
 
 			for ( $i = 0; $i < count( $this->users ); $i ++ ) {
 
-				$msg = 'Dear ' . $this->users[ $i ]['name'] . ',' . "\r\n" . "\r\n" . 'The special person that you have to buy a present for, for the occasion of the Secret Santa Event, is ' . $this->users[ $this->pairing[ $i ] ]['name'] . ' with the email '
+				$msg = 'You will have to gift' . $this->users[ $this->pairing[ $i ] ]['name']. ' '. 'with the email '
 				       . $this->users[ $this->pairing[ $i ] ]['email'] . ' and the recommended value of the present is ' . $this->recommendedExpenses
 				       . ' dollars. Have a jolly day!';
 
-				if ( mail( $this->users[ $i ]['email'], $this->emailTitle, $msg, 'From: ' . $this->fromEmail ) ) {
+				$composed_message= $message . "\r\n" . "\r\n" . $msg;
+				if ( mail( $this->users[ $i ]['email'], $this->emailTitle, $composed_message, 'From: ' . $this->fromEmail ) ) {
 					array_push( $this->sentEmailsAddresses, $this->users[ $i ]['email'] );
 				}
 			}

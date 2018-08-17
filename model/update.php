@@ -1,7 +1,6 @@
 <?php
 require_once 'connection.php';
 
-
 // MODIFY PERSON'S DETAILS
 if (isset($_POST['save'])) {
 
@@ -44,9 +43,7 @@ if (isset($_POST['save'])) {
 			'email' => $email,
 			'preferences' => $preferences,
 			'private_notes' => $private_notes,
-		],[
-			 'email[=]'=>$email
-		]);
+		],[ "email[=]"=>$original]);
 
 
 		header('location: ../view/persons.php');

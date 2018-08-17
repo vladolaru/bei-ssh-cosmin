@@ -14,6 +14,7 @@ if ( isset( $_POST['set'] ) ) {
 	$errors    = array();
 	$datas     = '';
 	$email     = $_GET['email'];
+	$token     = $_GET['token'];
 
 	if ( empty( $password1 ) ) {
 		array_push( $errors, "First password is not set" );
@@ -28,14 +29,16 @@ if ( isset( $_POST['set'] ) ) {
 	}
 
 	if ( count( $errors ) == 0 ) {
-		$datas = $database->select( "users_db", [ "email", "password" ] );
+		$datas = $database->select( "users_db", [ "email", "password", "token" ] );
 		foreach ( $datas as $data ) {
-			if ( $email == $data['email'] ) {
+			if ( $email == $data['email'] && $token==$data['token'] ) {
 				$database->update( "users_db", [
 					"password" => $password1,
+					"token" => rand(96578,456780)
 				], [
 					"email" => $email
 				] );
+
 				header( 'location: ../view/login.php' );
 				exit;
 			}

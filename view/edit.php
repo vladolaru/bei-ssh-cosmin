@@ -26,7 +26,6 @@ include '../model/update.php';
 					'private_notes' => '',
 				);
 			}
-			else {$update_flag=1;}
 			?>
 
 			<p class="has-text-black has-text-centered"><strong>What is this person all about?</strong></p>
@@ -52,7 +51,7 @@ include '../model/update.php';
 
 				<label class="label">Email address <ion-icon name="mail"></ion-icon></label>
 				<div class="control ">
-					<input name="email" class="input is-primary" type="email" placeholder="Email address" value="<?php echo $desired_user['email']; ?>">
+					<input name="email" class="input is-primary" type="email" placeholder="Email address" value="<?php $original_email=$desired_user['email']; echo $desired_user['email']; ?>">
 				</div>
 
 

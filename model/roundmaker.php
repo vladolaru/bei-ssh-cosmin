@@ -24,6 +24,9 @@ if (isset($_POST['send'])) {
 		if ( ! empty( $persons[0] ) ) {
 			$participants[] = $persons[0];
 		}
+		else {
+			array_push( $errors, 'One or more participants are not in the database' );
+		}
 	}
 
 
@@ -47,7 +50,7 @@ if (isset($_POST['send'])) {
 		$database->insert('rounds_db', [
 			'budget' => $budget,
 			'participants_number' => count($participants),
-			'date' => date('d/m/Y'),
+			'date' => date('jS \of F Y'),
 		]);
 
 			//aici includ algoritmul SSH
@@ -66,14 +69,12 @@ if (isset($_POST['send'])) {
 
 		foreach ($participants as $participant) {
 			// Set the users that are participating in the Secret Santa game.
-			$santa->addUsers( [ [ $participants['first_name'], $participants['email'] ] ] );
+			$santa->addUsers( [ [ 'name' => $participant['first_name'], 'email' => $participant['email'] ] ] );
 		}
 
 			// Pair users and send them the emails with the necessary emails.
 			$santa->goRudolph($messageEmail);
 
-
-		//trebuie sa gasesc o metoda sa transmita mesajul dorit de user
 
 		header('location: ../view/roundhistory.php');
 		exit;

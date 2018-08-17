@@ -18,18 +18,18 @@ include '../model/showhistory.php';
 			<!--Paragraful de mai jos e constant adaugat cand apare un user nou, numarul se itereaza si scade automat.  -->
 
 			<?php $index=1;
-			foreach($database_rounds as $rounds){
+			foreach($database_rounds as $round){
 				echo '
                 <div class="columns">
-                <div class="column is-one-third">
+                <div class="column is-one-third has-text-centered">
 				<p><strong>' .$index++ . '.' . $round['date'] . '</strong></p>
 		        </div>
 				
-				<div class="column is-one-third">
-				<p><strong>'. $round['participant_number']. '</strong></p>
+				<div class="column is-one-third has-text-centered">
+				<p><strong>'. $round['participants_number']. '</strong></p>
 				</div>
 				
-				<div class="is-pulled-right has-text-centered">
+				<div class="column is-one-third">
 				<p><strong>'. $round['budget']. '$' .'</strong></p>
 				</div>
 				</div>';

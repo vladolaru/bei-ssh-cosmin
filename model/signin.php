@@ -20,7 +20,7 @@ if ( isset( $_POST['login'] ) ) {
 	if ( count( $errors ) == 0 ) {
 		$datas = $database->select( "users_db", [ "email", "password", "user_id" ] );
 		foreach ( $datas as $data ) {
-			if ( $email == $data['email'] && $password == $data['password'] && $user_id == $data['user_id'] ) {
+			if ( $email == $data['email'] && $password == $data['password'] ) {
 				$_SESSION['email']   = $email;
 				$_SESSION['success'] = "You are now logged in";
 				header( 'location: ../view/persons.php' );

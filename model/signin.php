@@ -20,12 +20,15 @@ if ( isset( $_POST['login'] ) ) {
 		$datas = $database->select( "users_db", [ "email", "password", "user_id", "first_name" ] );
 		foreach ( $datas as $data ) {
 			if ( $email == $data['email'] && $password == $data['password'] ) {
-				header( 'location: ../view/persons.php' );
+				setcookie('first_name', $data['first_name'], time()+3600, '/');
+				setcookie('user_id', $data['user_id'], time()+3600, '/');
+				setcookie('email', $data['email'], time()+3600, '/');
+				setcookie('password', $data['password'], time()+3600, '/');
 
-				setcookie('first_name', $data['first_name'], time()+3600);
-				setcookie('user_id', $data['user_id'], time()+3600);
-				setcookie('email', $data['email'], time()+3600);
-				setcookie('password', $data['password'], time()+3600);
+				header( 'location: ../view/persons.php' );
+				die;
+
+
 			}
 		}
 	}

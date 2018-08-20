@@ -1,8 +1,7 @@
 <?php
 ?>
 
-<html>
-<body>
+
 <style>
     .footer{
         background-color: #ff3860;

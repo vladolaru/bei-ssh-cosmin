@@ -1,5 +1,6 @@
 <?php include_once 'headerin.php';
 include '../model/update.php';
+include '../model/connection.php';
 ?>
 
 <html>
@@ -96,8 +97,5 @@ include '../model/update.php';
 	</div>
 </section>
 
-
-</body>
-</html>
 
 <?php include_once 'footer.php'; ?>

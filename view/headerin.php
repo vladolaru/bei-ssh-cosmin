@@ -1,4 +1,3 @@
-<?include '../model/logout.php';?>
 <html>
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
@@ -42,7 +41,7 @@
 	<div class="navbar">
 		<div class="navbar-item">
 
-            <form action="" method="post">
+            <form action="../model/logout.php" method="POST">
 
 		<button name="logout" class="has-text-black button">
 			Logout
@@ -67,7 +66,6 @@
 
 
 </section>
-</body>
-</html>
+
 
 

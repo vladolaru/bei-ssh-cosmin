@@ -1,5 +1,10 @@
-<?php include_once 'headerin.php';
-include '../model/connection.php';
+<?php
+/*if ( ! defined( 'SSH_ABSPATH' ) ) {
+	die;
+}*/
+
+include_once 'headerin.php';
+include /*SSH_ABSPATH . */ '../model/connection.php';
 include '../model/showhistory.php';
 
 ?>
@@ -19,21 +24,23 @@ include '../model/showhistory.php';
 
 			<?php $index=1;
 			foreach($database_rounds as $round){
+			if($round['user_id']==$_COOKIE['user_id'])
+			{
 				echo '
                 <div class="columns">
-                <div class="column is-one-third has-text-centered">
+                <div class="column is-one-half has-text-centered">
 				<p><strong>' .$index++ . '.' . $round['date'] . '</strong></p>
 		        </div>
 				
-				<div class="column is-one-third has-text-centered">
+				<div class="column is-one-quarter has-text-centered">
 				<p><strong>'. $round['participants_number']. '</strong></p>
 				</div>
 				
-				<div class="column is-one-third">
+				<div class="column is-one-quarter auto">
 				<p><strong>'. $round['budget']. '$' .'</strong></p>
 				</div>
 				</div>';
-			}
+			}}
 			?>
 
 			<div class="field is-grouped">

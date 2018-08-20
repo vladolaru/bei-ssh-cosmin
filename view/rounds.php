@@ -31,7 +31,9 @@ include '../model/showpersons.php';?>
                 <div class="select is-multiple">
                     <select name="select[]" multiple size="5">
                         <?php foreach($database_persons as $person)
-                            echo "<option value=".$person['email'] .">". $person['email'] . "</option>"
+                        if($person['user_id']==$_COOKIE['user_id']) {
+	                        echo "<option value=" . $person['email'] . ">" . $person['email'] . "</option>";
+                        }
                             ?>
                     </select>
                 </div>

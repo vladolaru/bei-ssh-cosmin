@@ -10,15 +10,18 @@ Dupa ce am facut forma oarecum bruta a View-urilor, urmeaza:
 
 4)Fac in asa fel incat headerul sa observe daca userul e logat sau nu si sa apara "Welcome back, X!" (solved)
 
+8)Implic algoritmul in program. solved
 
 
+
+
+
+7)sa fac logout
+
+6)Sa pot sa modific info persoanelor;
 
 5)Continui pe ideea de controller si vedem cum facem logica aplicatiei dupa ce m-am logat(implicand cookies)
 
-3)Rezolv pt toate formurile faza cu baza de date si toate cele, sa fie totul perf;
 
-6)Sa pot sa modific info persoanelor, adaugand parametru la link.
 
-8)Implic algoritmul in program.
 
-(continuare pe parcurs)

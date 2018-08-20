@@ -22,6 +22,8 @@ include '../model/information_to_edit.php';
 
 			<?php $index=1;
             foreach($database_persons as $person){
+                if($person['user_id']==$_COOKIE['user_id'])
+                {
 				echo '
                 <div class="columns">
                 <div class="column is-one-third">
@@ -39,7 +41,7 @@ include '../model/information_to_edit.php';
 					<a href="http://pixy.local/ssh/model/delete.php?email=' .$person['email']. '"><ion-icon name="trash"></ion-icon></a>
 				</p>
 				</div></div>';
-			}
+			}}
 			?>
 
 

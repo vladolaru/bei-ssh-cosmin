@@ -1,5 +1,5 @@
 <?php include_once 'header.php';
-include '../model/signin.php';
+include '../model/contactsend.php';
 ?>
 
 <html>
@@ -37,12 +37,13 @@ include '../model/signin.php';
 									<textarea class="textarea is-primary" type="text" placeholder="What seems to be the problem? Or do you just wanna send us some cute pictures of dogs?"></textarea>
 								</div>
 							</div>
-
-						</div>
+                            <button name="sendContact" type="submit" onclick="alert('Thank you for your kind thoughts!');" class="button is-rounded is-danger">Send</button>
+                        </div>
 			</form>
 
 			<div class="level">
 				<div class="container">
+                    <br>
 					<p>or, in case you've lost yourself</p>
 					<br>
 					<div class="container has-text-center">

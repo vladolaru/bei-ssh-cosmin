@@ -60,14 +60,14 @@ include '../model/adding.php';
 				<label class="label">Personal preferences<ion-icon name="text"></ion-icon> </label>
 				<div class="field">
 					<div class="control">
-						<textarea name="preferences" maxlength="150" class="textarea is-primary" type="text" placeholder="What does this person like mostly? What not?(optional)"><?php echo $desired_user['preferences'];?></textarea>
+						<textarea name="preferences" class="textarea is-primary" type="text" placeholder="What does this person like mostly? What not?(optional)"><?php echo $desired_user['preferences'];?></textarea>
 					</div>
 				</div>
 
 				<label class="label">Private notes about this person<ion-icon name="text"></ion-icon> </label>
 				<div class="field">
 					<div class="control">
-						<textarea name="private_notes"  maxlength="150" class="textarea is-primary" type="text" placeholder="Something that maybe Santa would like to know...(optional)" ><?php echo $desired_user['private_notes'];?></textarea>
+						<textarea name="private_notes"  class="textarea is-primary" type="text" placeholder="Something that maybe Santa would like to know...(optional)" ><?php echo $desired_user['private_notes'];?></textarea>
 					</div>
 				</div>
 

@@ -1,3 +1,4 @@
+<?include '../model/logout.php';?>
 <html>
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
@@ -31,7 +32,7 @@
 	<div class="navbar-item navbar-end">
 		<div class="field is grouped">
 		<a class="has-text-white">
-			Welcome back, X!
+			Welcome back, <?php echo $_COOKIE['first_name'];?>!
 		</a>
 		</div>
 	</div>
@@ -40,9 +41,15 @@
 
 	<div class="navbar">
 		<div class="navbar-item">
-		<a href="../view/login.php" class="has-text-black button">
+
+            <form action="" method="post">
+
+		<button name="logout" class="has-text-black button">
 			Logout
-		</a>
+		</button>
+
+            </form>
+
 		</div>
 
 		<div class="navbar-item navbar-end">

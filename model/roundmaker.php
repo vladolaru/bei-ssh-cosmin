@@ -50,7 +50,8 @@ if (isset($_POST['send'])) {
 		$database->insert('rounds_db', [
 			'budget' => $budget,
 			'participants_number' => count($participants),
-			'date' => date('jS \of F Y'),
+			'date' => date("l jS \of F Y h:i:s"),
+			'user_id' => $_COOKIE['user_id'],
 		]);
 
 			//aici includ algoritmul SSH

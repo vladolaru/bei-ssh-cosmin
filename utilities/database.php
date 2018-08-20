@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'SSH_ABSPATH' ) ) {
+	die;
+}
 
 // If you installed via composer, just use this code to require autoloader on the top of your projects.
 require 'vendor/autoload.php';

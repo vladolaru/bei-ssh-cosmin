@@ -1,7 +1,6 @@
 <?php
 
 require_once 'connection.php';
-session_start();
 
 // LOGIN USER
 if ( isset( $_POST['login'] ) ) {
@@ -18,12 +17,15 @@ if ( isset( $_POST['login'] ) ) {
 	}
 
 	if ( count( $errors ) == 0 ) {
-		$datas = $database->select( "users_db", [ "email", "password", "user_id" ] );
+		$datas = $database->select( "users_db", [ "email", "password", "user_id", "first_name" ] );
 		foreach ( $datas as $data ) {
 			if ( $email == $data['email'] && $password == $data['password'] ) {
-				$_SESSION['email']   = $email;
-				$_SESSION['success'] = "You are now logged in";
 				header( 'location: ../view/persons.php' );
+
+				setcookie('first_name', $data['first_name'], time()+3600);
+				setcookie('user_id', $data['user_id'], time()+3600);
+				setcookie('email', $data['email'], time()+3600);
+				setcookie('password', $data['password'], time()+3600);
 			}
 		}
 	}

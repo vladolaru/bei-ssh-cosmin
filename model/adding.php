@@ -40,6 +40,7 @@ if (isset($_POST['save'])) {
 			'email' => $email,
 			'preferences' => $preferences,
 			'private_notes' => $private_notes,
+			'user_id' => $_COOKIE['user_id'],
 		]);
 
 

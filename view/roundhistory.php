@@ -4,7 +4,8 @@
 }*/
 
 include_once 'headerin.php';
-include /*SSH_ABSPATH . */ '../model/connection.php';
+include /*SSH_ABSPATH . */
+'../utilities/connection.php';
 include '../model/showhistory.php';
 
 ?>

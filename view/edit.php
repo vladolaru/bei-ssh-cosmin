@@ -1,6 +1,6 @@
 <?php include_once 'headerin.php';
 include '../model/update.php';
-include '../model/connection.php';
+include '../utilities/connection.php';
 ?>
 
 <html>

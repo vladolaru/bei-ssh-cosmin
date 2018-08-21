@@ -1,16 +1,16 @@
 <?php
-require_once 'connection.php';
+require_once '../utilities/connection.php';
 
 // MODIFY PERSON'S DETAILS
 if (isset($_POST['save'])) {
 
 	// initializing variables
+	$person_id = $_GET['id'];
 	$first_name = $_POST['first_name'];
 	$last_name = $_POST['last_name'];
 	$email    = $_POST['email'];
 	$preferences = $_POST['preferences'];
 	$private_notes= $_POST['private_notes'];
-	$person_id=
 	$errors = array();
 	$datas ='';
 	$i=0;
@@ -23,33 +23,19 @@ if (isset($_POST['save'])) {
 	if ( null == filter_var( $email, FILTER_VALIDATE_EMAIL ) || false == filter_var( $email, FILTER_VALIDATE_EMAIL ) ) {
 		array_push($errors, "Email is not properly written"); }
 
-	//daca emailul e egal cu cel actual
-
-	$datas = $database->select("persons_db", [ "email", "first_name", "last_name" , "private_notes", "preferences"]);
-	foreach($datas as $data){
-	if ($email==$data['email'] && $first_name==$data['first_name'] && $last_name==$data['last_name'] && $private_notes==$data['private_notes'] && $preferences==$data['preferences'])
-	{ array_push($errors, "No information was changed"); }}
 
 	// Check if
 	// a user does not already exist with the same email
-	$datas = $database->select("persons_db", [ "email", "person_id", "first_name","last_name","preferences","private_notes" ]);
-	foreach($datas as $data){
-		if ($email==$data['email'] && $person_id!=$datas['person_id']) {
-			$i=$i+1; //retinem cate emailuri mai sunt asa
+	$datas = $database->select("persons_db", [ "email", "person_id", "first_name","last_name","preferences","private_notes",]);
+	foreach($datas as $data) {
+		if ( $email == $data['email'] && $person_id != $data['person_id']) {
+				$i = $i + 1; //retinem cate emailuri mai sunt asa
 		}
 	}
 
 	if($i>0){
-		array_push($errors, "The user already exists");
+		array_push($errors, "You cannot modify the email with an email of an already existent user from your list");
 	}
-
-
-	/*foreach($datas as $data){
-		if ($email==$data['email'] && $person_id==$datas['person_id'] && ()) {
-			array_push() //atunci cand emailul e acelasi dar altceva a fost modificat
-		}
-	}*/
-
 
 
 	// Finally, update if there are no errors in the form
@@ -61,7 +47,7 @@ if (isset($_POST['save'])) {
 			'email' => $email,
 			'preferences' => $preferences,
 			'private_notes' => $private_notes,
-		],[ "email[=]"=>$original]);
+		],[ "person_id[=]"=>$person_id]);
 
 
 		header('location: ../view/persons.php');

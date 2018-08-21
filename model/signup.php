@@ -1,6 +1,6 @@
 <?php
 
-require_once 'connection.php';
+require_once '../utilities/connection.php';
 
 
 // REGISTER USER
@@ -41,13 +41,11 @@ if (isset($_POST['register'])) {
 			'first_name' => $first_name,
 			'last_name' => $last_name,
 			'email' => $email,
-			'password' => $password,
+			'password' => password_hash($password,PASSWORD_BCRYPT),
 		]);
 
 
-		$_SESSION['first_name'] = $first_name;
-		$_SESSION['success'] = "You are now logged in";
-		header('location: ../view/persons.php');
+		header('location: ../view/login.php');
 		exit;
 	}
 }

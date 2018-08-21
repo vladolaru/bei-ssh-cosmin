@@ -309,7 +309,7 @@ class SecretSantaCoreCosmin {
 
 			for ( $i = 0; $i < count( $this->users ); $i ++ ) {
 
-				$msg = 'You will have to gift' . $this->users[ $this->pairing[ $i ] ]['name']. ' '. 'with the email '
+				$msg = 'You will have to gift' . ' ' . $this->users[ $this->pairing[ $i ] ]['name']. ' '. 'with the email '
 				       . $this->users[ $this->pairing[ $i ] ]['email'] . ' and the recommended value of the present is ' . $this->recommendedExpenses
 				       . ' dollars.' . "\r\n" . "\r\n" . 'Have a jolly day!';
 

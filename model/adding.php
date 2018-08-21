@@ -1,6 +1,6 @@
 <?php
 
-require_once 'connection.php';
+require_once '../utilities/connection.php';
 
 
 // ADD PERSON'S DETAILS
@@ -20,13 +20,15 @@ if (isset($_POST['save'])) {
 	if (empty($first_name)) { array_push($errors, "First name is required"); }
 	if (empty($last_name)) { array_push($errors, "Last name is required"); }
 	if (empty($email)) { array_push($errors, "Email is required"); }
+	if ( null == filter_var( $email, FILTER_VALIDATE_EMAIL ) || false == filter_var( $email, FILTER_VALIDATE_EMAIL ) ) {
+		array_push($errors, "Email is not properly written"); }
 
 	// first check the database to make sure
-	// a user does not already exist with the same username and/or email
-	$datas = $database->select("persons_db", [ "email" ]);
+	// a user does not already exist with the same username and/or email in this users list
+	$datas = $database->select("persons_db", [ "email", "user_id", "person_id" ]);
 	foreach($datas as $data){
-		if ($email==$data['email']) {
-			array_push($errors, "The user already exists");
+		if ($email==$data['email'] && $_COOKIE['user_id']==$data['user_id']) {
+			array_push($errors, "The person already exists");
 		}
 	}
 

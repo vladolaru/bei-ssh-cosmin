@@ -1,6 +1,6 @@
 <?php
 
-require_once 'connection.php';
+require_once '../utilities/connection.php';
 require_once '../utilities/randomgenerator.php';
 
 session_start();
@@ -33,7 +33,7 @@ if ( isset( $_POST['set'] ) ) {
 		foreach ( $datas as $data ) {
 			if ( $email == $data['email'] && $token==$data['token'] ) {
 				$database->update( "users_db", [
-					"password" => $password1,
+					"password" => password_hash($password1,PASSWORD_BCRYPT),
 					"token" => rand(96578,456780)
 				], [
 					"email" => $email

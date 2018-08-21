@@ -1,6 +1,6 @@
 <?php
 
-require_once 'connection.php';
+require_once '../utilities/connection.php';
 require_once '../utilities/SSHalgorithm.php';
 
 
@@ -50,7 +50,7 @@ if (isset($_POST['send'])) {
 		$database->insert('rounds_db', [
 			'budget' => $budget,
 			'participants_number' => count($participants),
-			'date' => date("l jS \of F Y h:i:s"),
+			'date' => date("l jS \of F Y h:i:s A"),
 			'user_id' => $_COOKIE['user_id'],
 		]);
 

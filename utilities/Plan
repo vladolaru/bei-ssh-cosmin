@@ -12,15 +12,19 @@ Dupa ce am facut forma oarecum bruta a View-urilor, urmeaza:
 
 8)Implic algoritmul in program. solved
 
-
-
-
-
 7)sa fac logout
+
+
+
+
 
 6)Sa pot sa modific info persoanelor;
 
 5)Continui pe ideea de controller si vedem cum facem logica aplicatiei dupa ce m-am logat(implicand cookies)
+
+
+
+cookies nesecurizate, parole nehashed
 
 
 

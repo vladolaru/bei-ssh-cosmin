@@ -1,6 +1,5 @@
 <?php
-
-require_once 'connection.php';
+require_once '../utilities/connection.php';
 
 // LOGIN USER
 if ( isset( $_POST['login'] ) ) {
@@ -8,30 +7,31 @@ if ( isset( $_POST['login'] ) ) {
 	$email    = $_POST['email'];
 	$password = $_POST['password'];
 	$errors   = array();
+	$data     = array();
 
 	if ( empty( $email ) ) {
-		array_push( $errors, "Email is required at login" );
+		$errors[] = "Email is required at login";
 	}
 	if ( empty( $password ) ) {
-		array_push( $errors, "Password is required at login" );
+		$errors[] = "Password is required at login";
 	}
 
 	if ( count( $errors ) == 0 ) {
-		$datas = $database->select( "users_db", [ "email", "password", "user_id", "first_name" ] );
-		foreach ( $datas as $data ) {
-			if ( $email == $data['email'] && $password == $data['password'] ) {
-				setcookie('first_name', $data['first_name'], time()+3600, '/');
-				setcookie('user_id', $data['user_id'], time()+3600, '/');
-				setcookie('email', $data['email'], time()+3600, '/');
-				setcookie('password', $data['password'], time()+3600, '/');
+		$data= $database->select( "users_db", '*', [ 'email' => $email ] );
+		if ( count( $data )==0 ) {
+			$errors[] = "There is no user that has the email and password you have wrote. Please try again.";
+		} elseif ( password_hash($password,PASSWORD_BCRYPT) == $data[0]['password'] ) {
+			$data = $data[0];
+			setcookie( 'first_name', $data['first_name'], time() + 3600, '/' );
+			setcookie( 'user_id', $data['user_id'], time() + 3600, '/' );
+			setcookie( 'email', $data['email'], time() + 3600, '/' );
+			setcookie( 'password', $data['password'], time() + 3600, '/' );
 
-				header( 'location: ../view/persons.php' );
-				die;
-
-
-			}
+			header( 'location: http://pixy.local/ssh/view/persons.php' );
+			die;
+		} else {
+			$errors[] = "There is no user that has the email and password you have wrote. Please try again.";
 		}
 	}
-	else {array_push( $errors, "The user doesn't exist" );}
 }
 

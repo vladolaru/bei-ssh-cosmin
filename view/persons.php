@@ -1,5 +1,5 @@
 <?php include_once 'headerin.php';
-include '../model/connection.php';
+include '../utilities/connection.php';
 include '../model/showpersons.php';
 include '../model/information_to_edit.php';
 ?>
@@ -37,8 +37,8 @@ include '../model/information_to_edit.php';
 				
 				<div class="column is-pulled-right has-text-centered ">
 				<p>
-					<a href="http://pixy.local/ssh/model/information_to_edit.php?email=' . $person['email'] . '"><ion-icon name="information-circle"></ion-icon></a>
-					<a href="http://pixy.local/ssh/model/delete.php?email=' .$person['email']. '"><ion-icon name="trash"></ion-icon></a>
+					<a href="http://pixy.local/ssh/model/information_to_edit.php?id=' . $person['person_id'] . '"><ion-icon name="information-circle"></ion-icon></a>
+					<a href="http://pixy.local/ssh/model/delete.php?id=' .$person['person_id']. '"><ion-icon name="trash"></ion-icon></a>
 				</p>
 				</div></div>';
 			}}

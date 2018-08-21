@@ -1,5 +1,5 @@
 <?php
-require_once 'connection.php';
+require_once '../utilities/connection.php';
 require_once '../utilities/randomgenerator.php';
 
 session_start();

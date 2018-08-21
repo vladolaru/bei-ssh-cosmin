@@ -18,9 +18,10 @@ if ( isset( $_POST['login'] ) ) {
 
 	if ( count( $errors ) == 0 ) {
 		$data= $database->select( "users_db", '*', [ 'email' => $email ] );
-		if ( count( $data )==0 ) {
+		if ( empty( $data ) ) {
 			$errors[] = "There is no user that has the email and password you have wrote. Please try again.";
-		} elseif ( password_hash($password,PASSWORD_BCRYPT) == $data[0]['password'] ) {
+		} else
+			if ( true==password_verify($password,$data[0]['password']) ) {
 			$data = $data[0];
 			setcookie( 'first_name', $data['first_name'], time() + 3600, '/' );
 			setcookie( 'user_id', $data['user_id'], time() + 3600, '/' );

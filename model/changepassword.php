@@ -33,7 +33,7 @@ if ( isset( $_POST['set'] ) ) {
 		foreach ( $datas as $data ) {
 			if ( $email == $data['email'] && $token==$data['token'] ) {
 				$database->update( "users_db", [
-					"password" => password_hash($password1,PASSWORD_BCRYPT),
+					"password" => password_hash($password1,PASSWORD_DEFAULT),
 					"token" => rand(96578,456780)
 				], [
 					"email" => $email

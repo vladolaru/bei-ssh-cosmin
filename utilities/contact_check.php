@@ -1,5 +1,5 @@
 <?php
-require_once '../utilities/connection.php';
+require_once 'connection.php';
 
 // SEND FORM
 if ( isset( $_POST['sendContact'] ) ) {

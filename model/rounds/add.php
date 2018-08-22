@@ -15,7 +15,6 @@ if (isset($_POST['send'])) {
 
 	//initializing script variables
 	$errors = array();
-	$datas ='';
 	$participants=array();
 
 
@@ -25,23 +24,18 @@ if (isset($_POST['send'])) {
 			$participants[] = $persons[0];
 		}
 		else {
-			array_push( $errors, 'One or more participants are not in the database' );
+			$errors[]='One or more participants are not in the database';
 		}
 	}
 
 
 	// form validation: ensure that the form is correctly filled ...
 	// by adding (array_push()) corresponding error unto $errors array
-	if (count($participants)<3) { array_push($errors, "Participants are required(more than 2)"); }
-	if (empty($budget) || !is_numeric($budget)) { array_push($errors, "Budget is not properly written"); }
-	if (empty($titleEmail)) { array_push($errors, "Email title is required"); }
-	if (empty($fromEmail)) { array_push($errors, "The sender email is required"); }
-	if (empty($messageEmail)) { array_push($errors, "The email message is required"); }
-
-	// first check the database to make sure
-	// that all the participants exist
-
-
+	if (count($participants)<3) { $errors[]="Participants are required(more than 2)"; }
+	if (empty($budget) || !is_numeric($budget)) { $errors[]="Budget is not properly written"; }
+	if (empty($titleEmail)) { $errors[]="Email title is required"; }
+	if (empty($fromEmail)) { $errors[]="The sender email is required"; }
+	if (empty($messageEmail)) { $errors[]="The email message is required"; }
 
 
 	// Finally, use the SSH algorithm if there are no errors in the form

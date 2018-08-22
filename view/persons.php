@@ -1,4 +1,4 @@
-<?php include_once 'headerin.php';
+<?php include_once 'header_logged_in.php';
 include '../utilities/connection.php';
 include '../model/showpersons.php';
 include '../model/information_to_edit.php';

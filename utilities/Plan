@@ -10,7 +10,7 @@ Dupa ce am facut forma oarecum bruta a View-urilor, urmeaza:
 
 4)Fac in asa fel incat headerul sa observe daca userul e logat sau nu si sa apara "Welcome back, X!" (solved)
 
-8)Implic algoritmul in program. solved
+8)Implic algoritmul in program. (solved)
 
 7)sa fac logout
 
@@ -21,12 +21,23 @@ parole nehashed
 
 
 
-5)Continui pe ideea de controller si vedem cum facem logica aplicatiei dupa ce m-am logat(implicand cookies)
-
-cookies nesecurizate
 
 
-1)controller
+3)sa incapsulez tot codul si sa respect dry, folosim function() cat se poate de des
+
+4)organizare pe foldere
+
+1)daca nu exista cookies, redirectionez orice potential user spre pagina de index, care este si controlleru
+
+2)sa fac controlleru sa imbine pagini, nu sa le dau eu de-a gata
+
+
+
+
+
+!!!!!!articolul cu modelul
+
+!!!!!!hashed cookies and checking them at every new request http://php.net/manual/ro/function.hash-hmac.php
 
 
 

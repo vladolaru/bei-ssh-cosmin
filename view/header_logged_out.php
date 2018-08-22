@@ -1,6 +1,3 @@
-<?php
-?>
-
 <html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
@@ -22,7 +19,7 @@
                 SSH
             </h1>
             <h2 class="subtitle">
-                Santa's Secret Helpser
+                Santa's Secret Helper
             </h2>
         </div>
     </div>
@@ -30,6 +27,4 @@
 
 
 </section>
-</body>
-</html>
 

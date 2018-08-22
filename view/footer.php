@@ -1,7 +1,3 @@
-<?php
-?>
-
-
 <style>
     .footer{
         background-color: #ff3860;
